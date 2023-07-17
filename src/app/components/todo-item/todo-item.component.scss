@@ -1,0 +1,14 @@
+.todo-item {
+  background-color: var(--surface-0);
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  margin: 6px 0;
+  border-radius: 4px;
+
+  &-name {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+  }
+}

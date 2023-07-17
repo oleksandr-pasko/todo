@@ -1,0 +1,16 @@
+.todo {
+  display: flex;
+  margin-bottom: 12px;
+
+  &__type {
+    min-width: 15rem;
+  }
+
+  &__name {
+    margin-right: 12px;
+  }
+}
+
+::ng-deep .p-dropdown.p-component.todo__dropdown {
+  width: 14rem;
+}

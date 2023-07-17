@@ -1,0 +1,48 @@
+<p-card>
+  <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+    <ng-container formArrayName="todoList">
+      <div
+        class="todo"
+        *ngFor="let todo of todoList.controls; index as i"
+        [formGroupName]="i"
+      >
+        <div class="todo__type">
+          <p-dropdown
+            formControlName="todoType"
+            [options]="todoTypes"
+            optionLabel="key"
+            [styleClass]="'todo__dropdown'"
+            placeholder="Select Todo Type"
+          ></p-dropdown>
+        </div>
+        <div class="todo__name">
+          <input formControlName="todoName" type="text" pInputText />
+        </div>
+        <div>
+          <p-button
+            icon="pi pi-trash"
+            *ngIf="todoList.length > 1"
+            (click)="deleteTodo(i)"
+          ></p-button>
+        </div>
+      </div>
+    </ng-container>
+
+    <div style="display: flex; justify-content: space-between">
+      <div>
+        <p-button
+          icon="pi pi-plus"
+          [disabled]="!todoForm.valid"
+          (click)="onAddTodo()"
+        ></p-button>
+      </div>
+      <div>
+        <p-button
+          type="submit"
+          label="Submit"
+          [disabled]="!todoForm.valid"
+        ></p-button>
+      </div>
+    </div>
+  </form>
+</p-card>
