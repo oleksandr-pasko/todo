@@ -1,7 +1,0 @@
-<ng-container *ngIf="{ todoList: todoList$ | async } as td">
-  <app-todo-item *ngFor="let todo of td.todoList" [item]="todo">
-    <p-button (onClick)="deleteTodo(todo)" styleClass="p-button-danger"
-      >Delete</p-button
-    >
-  </app-todo-item>
-</ng-container>
