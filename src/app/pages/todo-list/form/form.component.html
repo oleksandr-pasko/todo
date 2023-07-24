@@ -16,14 +16,17 @@
           ></p-dropdown>
         </div>
         <div class="todo__name">
-          <input formControlName="todoName" type="text" pInputText />
-        </div>
-        <div>
-          <p-button
-            icon="pi pi-trash"
-            *ngIf="todoList.length > 1"
-            (click)="deleteTodo(i)"
-          ></p-button>
+          <div class="input">
+            <input formControlName="todoName" type="text" pInputText />
+          </div>
+          <div>
+            <p-button
+              class="delete-button"
+              icon="pi pi-trash"
+              *ngIf="todoList.length > 1"
+              (click)="deleteTodo(i)"
+            ></p-button>
+          </div>
         </div>
       </div>
     </ng-container>
@@ -33,7 +36,7 @@
         <p-button
           icon="pi pi-plus"
           [disabled]="!todoForm.valid"
-          (click)="onAddTodo()"
+          (onClick)="onAddTodo()"
         ></p-button>
       </div>
       <div>

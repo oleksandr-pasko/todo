@@ -2,15 +2,40 @@
   display: flex;
   margin-bottom: 12px;
 
+  @media screen and (max-width: 740px) {
+    flex-direction: column;
+  }
+
   &__type {
     min-width: 15rem;
+    margin-right: 12px;
+
+    @media screen and (max-width: 740px) {
+      width: 100%;
+      min-width: none;
+    }
   }
 
   &__name {
-    margin-right: 12px;
+    display: flex;
+    width: 100%;
+    margin: 12px 0 12px;
+    & .input {
+      width: 100%;
+      & input {
+        width: 100%;
+      }
+    }
+
+    & .delete-button {
+      margin-left: 12px;
+    }
   }
 }
 
 ::ng-deep .p-dropdown.p-component.todo__dropdown {
-  width: 14rem;
+  // width: 14rem;
+  width: 100%;
+
+  // 60px
 }
